@@ -10,8 +10,6 @@ They'd like a data engineer to create a Postgres database with tables designed t
 
 The star schema has 1 *fact* table (songplays), and 4 *dimension* tables (users, songs, artists, time). `DROP`, `CREATE`, `INSERT`, and `SELECT` queries are defined in **sql_queries.py**. **create_tables.py** uses functions `create_database`, `drop_tables`, and `create_tables` to create the database sparkifydb and the required tables.
 
-![](sparkify_erd.png?raw=true)
-
 Extract, transform, load processes in **etl.py** populate the **songs** and **artists** tables with data derived from the JSON song files, `data/song_data`. Processed data derived from the JSON log files, `data/log_data`, is used to populate **time** and **users** tables. 
 A `SELECT` query collects song and artist id from the **songs** and **artists** tables and combines this with log file derived data to populate the **songplays** fact table.
 
@@ -40,7 +38,7 @@ The Star Database Schema used for data modeling in this ETL pipeline. There is o
 
 An entity relationship diagram (ERD) of the data model is given below. 
 
-![database](./images/sparkify_erd.png)
+![](./Images/sparkify_erd.png)
 
 ## Project structure
 
@@ -95,8 +93,6 @@ Follow the steps to extract and load the data into the data model.
 
 3. Confirm if data is correctly loaded and perform unit tests using: `test.ipynb`
 
-#### Contact
-Obinna Iheanachor: datascientistobi@gmail.com
-LinkedIn: https://www.linkedin.com/in/obinnaiheanachor/
+
 
 
