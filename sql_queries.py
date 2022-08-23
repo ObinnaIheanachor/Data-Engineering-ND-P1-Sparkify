@@ -34,7 +34,7 @@ song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs
     (song_id TEXT PRIMARY KEY, 
     title TEXT NOT NULL, 
-    artist_id TEXT NOT NULL REFERENCES artists(artist_id), 
+    artist_id TEXT NOT NULL, 
     year INT CHECK (year>=0), 
     duration FLOAT NOT NULL)
 """)
@@ -63,8 +63,8 @@ time_table_create = ("""
 
 songplay_table_insert = ("""
     INSERT INTO songplays
-    (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
     ON CONFLICT (songplay_id) DO NOTHING;
 """)
 
